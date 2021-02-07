@@ -1,0 +1,12 @@
+E:\dita-ot-3.6>bin\dita -f html5 -i ..\temp\samples_dita-ot-3.6_01-31-2021\remotelighting.ditamap -o ..\temp\samples_dita-ot-3.6_01-31-2021\output\html5
+   [conref] file:/E:/temp/samples_dita-ot-3.6_01-31-2021/xdita/test-topic.dita:8:79: [DOTX075W][WARN]: A content reference in a constrained document type is pulling content from an unconstrained document type. The reference will resolve, but may result in content that violates one of the document constraints in "(topic xdita-c)".
+   [conref] file:/E:/temp/samples_dita-ot-3.6_01-31-2021/xdita/test-topic.dita:10:70: [DOTX075W][WARN]: A content reference in a constrained document type is pulling content from an unconstrained document type. The reference will resolve, but may result in content that violates one of the document constraints in "(topic xdita-c)".
+[move-meta] Warning at char 9 in xsl:sequence/@select on line 60 column 69 of mappullImpl.xsl:
+[move-meta]   FODC0002: I/O error reported by XML parser processing
+[move-meta]   file:/C:/Users/stanl/AppData/Local/Temp/temp20210131150423375/hdita/intro-network-lighting.html: C:\Users\stanl\AppData\Local\Temp\temp20210131150423375\hdita\intro-network-lighting.html (The system cannot find the file specified)
+[move-meta] file:/E:/temp/samples_dita-ot-3.6_01-31-2021/remotelighting.ditamap:14:71: [DOTX023W][WARN]: Unable to retrieve navtitle from target: 'hdita/intro-network-lighting.html'.
+[move-meta] file:/E:/temp/samples_dita-ot-3.6_01-31-2021/remotelighting.ditamap:14:71: [DOTX027W][WARN]: Unable to retrieve linktext from target: 'hdita/intro-network-lighting.html'.
+[move-meta] file:/E:/temp/samples_dita-ot-3.6_01-31-2021/remotelighting.ditamap:32:60: [DOTX021E][ERROR]: Missing navtitle attribute or element for non-DITA resource "hdita/test-topic2.html". References must provide a local navigation title when the target is not a local DITA resource.
+[move-meta] file:/E:/temp/samples_dita-ot-3.6_01-31-2021/remotelighting.ditamap:32:60: [DOTX025E][ERROR]: Missing linktext and navtitle for non-DITA resource "hdita/test-topic2.html". References must provide a local navigation title when the target is not a local DITA resource.
+File file:/E:/temp/samples_dita-ot-3.6_01-31-2021/mdita/intro-network-lighting.html not found
+     [xslt] file:/E:/temp/samples_dita-ot-3.6_01-31-2021/remotelighting.ditamap:14:71: [DOTX009W][WARN]: Could not retrieve a title from 'hdita/intro-network-lighting.html'. Using 'hdita/intro-network-lighting.html' instead.

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD LIGHTWEIGHT DITA Topic//EN" "topic.dtd">
+<topic id="xdita-xrefs">
+  <title>Test topic - XDITA xrefs</title>
+  <body>
+    <p>XDITA to XDITA: See <xref href="intro-product.dita"/>.</p>
+    <p>- - - - -</p>
+    <p>XDITA to MDITA: See <xref href="../mdita/remote-components.md" format="markdown"/>.</p>
+    <p>- - - - -</p>
+    <p>XDITA to HDITA: See <xref href="../hdita/intro-network-lighting.html" format="html" scope="local"/>.</p>
+    <p>- - - - -</p>
+  </body>
+</topic>

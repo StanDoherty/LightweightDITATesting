@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD LIGHTWEIGHT DITA Topic//EN" "topic.dtd">
+<topic id="topic_ng3_3mw_34b">
+  <title>Test topic - XDITA</title>
+  <body>
+    <p conref="intro-product.dita#intro-product/warning"></p>
+    <p> - - - - - </p>
+    <p conref="../hdita/test-topic.html#test-article-hdita/warning-test-html"></p>
+    <p> - - - - - </p>
+    <p conref="../mdita/test-topic.md#test-topic-md/warning-test-md"></p>
+  </body>
+</topic>
