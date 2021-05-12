@@ -1,0 +1,1 @@
+e:\dita-ot-3.6.1\bin\dita -i remotelighting.ditamap -f html5 -o ..\..\git_output\may-2021-test\html5

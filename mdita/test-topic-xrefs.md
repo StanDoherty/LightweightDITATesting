@@ -6,5 +6,5 @@ id: test-topic-xrefs
 
 Paragraph
 
-[Basic Concepts of Network Lighting](intro-network-lighting.html) 
+[Basic Concepts of Network Lighting](../hdita/intro-network-lighting.html) 
 
