@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD LIGHTWEIGHT DITA Topic//EN" "lw-topic.dtd">
+<topic id="topic_ng3_3mw_34b">
+  <title>Test topic - XDITA - Conditions</title>
+  <body>
+    
+    <p> The next paragraph has the condition props="exclude-me".</p>
+    
+    <p props="exclude-me">exclude-me exclude-me exclude-me exclude-me exclude-me exclude-me exclude-me exclude-me 
+    </p> 
+    
+    <p>include-me include-me</p>
+    
+  </body>
+</topic>

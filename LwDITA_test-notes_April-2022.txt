@@ -1,0 +1,396 @@
+TEST NOTES: February 2021
+
+These notes document 24 tests of LwDITA interoperability in the areas of transclusion, cross-references, key resolution, and conditional processing.  
+
+Test-01: XDITA topic transcludes an XDITA element
+====================================================================
+TARGET:
+./xdita/intro-product.dita contains the content:
+  <p id="warning">Electrical hazards can cause burns, shocks and electrocution (death).</p>
+
+REFERENCE:
+./xdita/test-topic.dita contains the reference:
+  <p conref="intro-product.dita#intro-product/warning"></p>
+
+RESULTS:
+- Oxygen 23.0:    PASS
+- DITA-OT pdf:    PASS
+- DITA-OT html5:  PASS
+
+Test-02: MDITA topic transcludes an XDITA element
+====================================================================
+TARGET:
+./xdita/intro-product.dita contains the content:
+  <p id="warning">Electrical hazards can cause burns, shocks and electrocution (death).</p>
+
+REFERENCE:
+./mdita/led-specs.md contains the reference:
+  <p data-conref="../xdita/intro-product.dita#intro-product/warning" />
+
+RESULTS:
+- Oxygen 23.0:    PASS
+- DITA-OT pdf:    PASS
+- DITA-OT html5:  PASS
+
+Test-03: HDITA topic transcludes an XDITA element
+====================================================================
+TARGET:
+./xdita/intro-product.dita contains the content:
+  <p id="warning">Electrical hazards can cause burns, shocks and electrocution (death).</p>
+
+REFERENCE:
+./hdita/considerations.html contains the reference:
+  <p data-conref="../xdita/intro-product.dita#intro-product/warning"></p>
+
+RESULTS:
+- Oxygen 23.0:    FAIL / No error (test_01.png)
+- DITA-OT pdf:    FAIL / No error and no referenced content
+- DITA-OT html5:  PASS
+
+Test-04: XDITA topic transcludes an MDITA element
+====================================================================
+TARGET:
+./mdita/test-topic.md contains the content:
+  <p id="warning-test-md">This MDITA paragraph has the @id "warning-test".</p>
+
+REFERENCE:
+./xdita/test-topic.dita contains the reference:
+  <p conref="../mdita/test-topic.md#test-topic-md/warning-test-md"></p>
+
+RESULTS:
+- Oxygen 23.0:    FAIL / reports error "Content is not allowed in prolog." (test-04.png)
+- DITA-OT pdf:    PASS
+- DITA-OT html5:  PASS
+
+Test-05: MDITA topic transcludes an MDITA element
+====================================================================
+TARGET:
+./mdita/test-topic.md contains the content:
+  <p id="warning-test-md">This MDITA paragraph has the @id "warning-test".</p>
+
+REFERENCE:
+./mdita/test-topic2.md contains the reference:
+  <p data-conref="../mdita/test-topic.md#test-topic-md/warning-test-md"></p>
+
+RESULTS:
+- Oxygen 23.0:    FAIL / reports error "Content is not allowed in prolog." (test-04.png)
+- DITA-OT pdf:    FAIL / no error / no transcluded content generated
+- DITA-OT html5:  PASS / no error / no transcluded content generated
+
+Test-06: HDITA topic transcludes an MDITA element
+====================================================================
+TARGET:
+./mdita/test-topic.md contains the content:
+  <p id="warning-test-md">This MDITA paragraph has the @id "warning-test".</p>
+
+REFERENCE:
+./hdita/test-topic.html contains the reference:
+  <li><p data-conref="../mdita/test-topic.md#test-topic-md/warning-test-md"></p></li>
+
+RESULTS:
+- Oxygen 23.0:    FAIL / no error (test_03.png)
+- DITA-OT pdf:    FAIL / HDITA topic does not build
+- DITA-OT html5:  PASS
+
+Test-07: XDITA topic transcludes an HDITA element
+====================================================================
+TARGET:
+./hdita/test-topic.html contains the content:
+  <p id="warning-test-html">HDITA paragraph with @id warning-test-html.</p>
+
+REFERENCE:
+./xdita/test-topic.dita contains the reference:
+  <p conref="../hdita/test-topic.html#test-article-hdita/warning-test-html"></p>
+
+RESULTS:
+- Oxygen 23.0:    FAIL / with error "The element type "meta" must be 
+                  terminated by the matching end-tag "</meta>". (test_05.png)
+- DITA-OT pdf:    PASS
+- DITA-OT html5:  PASS
+
+Test-08: MDITA topic transcludes an HDITA element
+====================================================================
+TARGET:
+./hdita/test-topic.html contains the content:
+  <p id="warning-test-html">HDITA paragraph with @id warning-test-html.</p>
+
+REFERENCE:
+./mdita/test-topic2.md contains the reference:
+  <p data-conref="../hdita/test-topic.html#test-article-hdita/warning-test-html"></p>
+
+RESULTS:
+- Oxygen 23.0:    PASS
+- DITA-OT pdf:    FAIL / no error / no transcluded content generated
+- DITA-OT html5:  PASS
+
+Test-09: HDITA topic transcludes an HDITA element
+====================================================================
+TARGET:
+./hdita/test-topic.html contains the content:
+  <p id="warning-test-html">HDITA paragraph with @id warning-test-html.</p>
+
+REFERENCE:
+./hdita/test-topic2.html contains the reference:
+  <p conref="../hdita/test-topic.html#test-topic-html/warning-test-html"></p>
+
+RESULTS:
+- Oxygen 23.0:    FAIL / no error / no referenced content
+- DITA-OT pdf:    FAIL / XDITA topic does not build
+- DITA-OT html5:  FAIL
+
+Test-10: XDITA topic resolves an XDITA map key definition
+====================================================================
+TARGET:
+./remotelighting.ditamap contains the key definition:
+  <keydef keys="product-name">
+    <topicmeta>
+      <linktext>Remote Lighting Network</linktext>
+    </topicmeta>
+  </keydef>
+
+REFERENCE:
+./xdita/turn-on-off-dim-lights.dita contains the reference:
+  <keyword keyref="product-name"/>
+
+RESULTS:
+- Oxygen 23.0:    PASS
+- DITA-OT pdf:    PASS
+- DITA-OT html5:  PASS
+
+Test-11: MDITA topic resolves an XDITA map key definition
+====================================================================
+TARGET:
+./remotelighting.ditamap contains the key definition:
+  <keydef keys="product-name">
+    <topicmeta>
+      <linktext>Remote Lighting Network</linktext>
+    </topicmeta>
+  </keydef>
+
+REFERENCE:
+./mdita/remote-components.md contains the reference:
+  [product-name]
+
+RESULTS:
+- Oxygen 23.0:    PASS
+- DITA-OT pdf:    FAIL
+- DITA-OT html5:  PASS
+
+Test-12: HDITA topic resolves an XDITA map key definition
+====================================================================
+TARGET:
+./remotelighting.ditamap contains the key definition:
+  <keydef keys="product-name">
+    <topicmeta>
+      <linktext>Remote Lighting Network</linktext>
+    </topicmeta>
+  </keydef>
+
+REFERENCE:
+./hdita/low-power.html contains the reference:
+  <span data-keyref="product-name"></span>
+
+RESULTS:
+- Oxygen 23.0:    FAIL
+- DITA-OT pdf:    FAIL
+- DITA-OT html5:  PASS
+
+Test-13: XDITA topic cross-references an XDITA topic
+====================================================================
+TARGET:
+./xdita/intro-product.dita
+
+REFERENCE:
+./xdita/test-topic-xrefs.dita contains the reference:
+  <xref href="intro-product.dita"/>
+
+RESULTS:
+- Oxygen 23.0:    PASS
+- DITA-OT pdf:    PASS
+- DITA-OT html5:  PASS
+
+Test-14: MDITA topic cross-references an XDITA topic
+====================================================================
+TARGET:
+./xdita/remote-specs.dita
+
+REFERENCE:
+./mdita/product-specs.md contains the reference:
+  [Specifications describing the electronics and technology inside the remote control](../xdita/remote-specs.dita)
+
+RESULTS:
+- Oxygen 23.0:    PASS
+- DITA-OT pdf:    PASS
+- DITA-OT html5:  PASS
+
+Test-15: HDITA topic cross-references an XDITA topic
+====================================================================
+TARGET:
+./xdita/remote-specs.dita
+
+REFERENCE:
+./hdita/test-topic-xrefs.html contains the reference:
+  [Specifications describing the electronics and technology inside the remote control](../xdita/remote-specs.dita)
+
+RESULTS:
+- Oxygen 23.0:    PASS
+- DITA-OT pdf:    PASS
+- DITA-OT html5:  FAIL
+
+Test-16: XDITA topic cross-references an MDITA topic
+====================================================================
+TARGET:
+./mdita/remote-components.md
+
+REFERENCE:
+./xdita/test-topic-xrefs.dita contains the reference:
+  <p>XDITA to XDITA: See <xref href="../mdita/remote-components.md" format="markdown"></xref>.</p>
+
+RESULTS:
+- Oxygen 23.0:    PASS
+- DITA-OT pdf:    PASS
+- DITA-OT html5:  PASS
+
+Test-17: MDITA topic cross-references an MDITA topic
+====================================================================
+TARGET:
+./mdita/led-specs.md
+
+REFERENCE:
+./mdita/product-specs.md contains the reference:
+  [Specifications describing the electronics and technology inside the LED light bulb](led-specs.md)
+
+RESULTS:
+- Oxygen 23.0:    PASS
+- DITA-OT pdf:    PASS
+- DITA-OT html5:  PASS
+
+Test-18: HDITA topic cross-references an MDITA topic
+====================================================================
+TARGET:
+./mdita/led-specs.md
+
+REFERENCE:
+./mdita/product-specs.md contains the reference:
+  [Specifications describing the electronics and technology inside the LED light bulb](led-specs.md)
+
+RESULTS:
+- Oxygen 23.0:    PASS
+- DITA-OT pdf:    PASS
+- DITA-OT html5:  FAIL
+
+Test-19: XDITA topic cross-references an HDITA topic
+====================================================================
+TARGET:
+./hdita/intro-networking-lighting.html
+
+REFERENCE:
+./xdita/test-topic-xrefs.dita contains the reference:
+  <p>XDITA to HDITA: See <xref href="../hdita/intro-networking-lighting.html" 
+  format="html" scope="local"></xref>.</p>
+
+RESULTS:
+- Oxygen 23.0:    PASS
+- DITA-OT pdf:    FAIL
+- DITA-OT html5:  PASS
+
+Test-20: MDITA topic cross-references an HDITA topic
+====================================================================
+TARGET:
+./hdita/intro-networking-lighting.html
+
+REFERENCE:
+./mdita/test-topic-xrefs.md contains the reference:
+  [Basic Concepts of Network Lighting](intro-network-lighting.html)
+
+RESULTS:
+- Oxygen 23.0:    PASS
+- DITA-OT pdf:    FAIL
+- DITA-OT html5:  PASS
+
+Test-21: HDITA topic cross-references an HDITA topic
+====================================================================
+TARGET:
+./hdita/intro-networking-lighting.html
+
+REFERENCE:
+./hdita/test-topic-xrefs.html contains the reference:
+  [Basic Concepts of Network Lighting](intro-network-lighting.html)
+
+RESULTS:
+- Oxygen 23.0:    PASS
+- DITA-OT pdf:    FAIL
+- DITA-OT html5:  PASS
+
+Test-22: DITA 1.3 DITAVAL filters XDITA element with @props attribute
+====================================================================
+TARGET:
+./xdita/test-topic_condfitions.dita
+<p props="exclude-me">
+  exclude-me exclude-me exclude-me exclude-me exclude-me exclude-me exclude-me exclude-me 
+</p> 
+
+DITAVAL:
+./lwdita1.ditaval
+<?xml version="1.0" encoding="UTF-8"?>
+<val>
+    <prop action="exclude" att="props" val="exclude-me"/>
+    <prop action="exclude" att="data-props" val="exclude-me"/>
+</val>
+
+
+RESULTS:
+- Oxygen 23.0:    PASS
+- DITA-OT pdf:    PASS
+- DITA-OT html5:  PASS
+
+Test-23: DITA 1.3 DITAVAL filters MDITA element with @data-props attribute
+====================================================================
+TARGET:
+./mdita/test-topic-conditions.md
+<p data-props="exclude-me">
+  exclude-me exclude-me exclude-me exclude-me exclude-me exclude-me exclude-me exclude-me 
+</p> 
+
+DITAVAL:
+./lwdita1.ditaval
+<?xml version="1.0" encoding="UTF-8"?>
+<val>
+    <prop action="exclude" att="props" val="exclude-me"/>
+    <prop action="exclude" att="data-props" val="exclude-me"/>
+</val>
+
+
+RESULTS:
+- Oxygen 23.0:    N/A
+- DITA-OT pdf:    FAIL
+- DITA-OT html5:  FAIL
+
+Test-24: DITA 1.3 DITAVAL filters HDITA element with @data-props attribute
+====================================================================
+TARGET:
+./hdita/test-topic-conditions.html
+<p data-props="exclude-me">
+  exclude-me exclude-me exclude-me exclude-me exclude-me exclude-me exclude-me exclude-me 
+</p> 
+
+DITAVAL:
+./lwdita1.ditaval
+<?xml version="1.0" encoding="UTF-8"?>
+<val>
+    <prop action="exclude" att="props" val="exclude-me"/>
+    <prop action="exclude" att="data-props" val="exclude-me"/>
+</val>
+
+
+RESULTS:
+- Oxygen 23.0:    N/A
+- DITA-OT pdf:    FAIL
+- DITA-OT html5:  FAIL
+
+
+
+
+
+
+
