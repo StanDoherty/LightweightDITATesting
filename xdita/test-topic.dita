@@ -5,8 +5,6 @@
   <body>
     <p conref="intro-product.dita#intro-product/warning"></p>
     <p> - - - - - </p>
-    <p conref="../hdita/test-topic.html#test-article-hdita/warning-test-html"></p>
-    <p> - - - - - </p>
     <p conref="../mdita/test-topic.md#test-topic-md/warning-test-md"></p>
   </body>
 </topic>
