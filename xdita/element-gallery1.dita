@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD LIGHTWEIGHT DITA Topic//EN" "topic.dtd">
+<topic id="topic_tpb_m2r_gtb">
+  <title></title>
+<shortdesc>shortdesc shortdesc shordesc shortdesc</shortdesc>
+  <body>
+
+<p>Text <i>italics text</i> text text <b>bold text bold text</b> <ph>ph ph ph </ph></p>
+    
+    <pre>pre formatting pre</pre>
+    
+    <p>paragraph paragraph paragraph</p>
+
+    <p>paragraph paragraph paragraph</p>
+    <!-- Inline image -->
+    <p>Running text <image href="../../ootb-dita/images/whos-your-daddy.jpg">
+      <alt>xx</alt>
+    </image> running text</p>
+    <!-- Simulated block image -->
+    <p><image href="../../ootb-dita/images/whos-your-daddy.jpg"/></p>
+    <dl>
+      <dlentry>
+        <dt>dt dt dt dt dt</dt>
+        <dd>
+          <p>dd dd dd dd</p>
+        </dd>
+      </dlentry>
+    </dl>
+    <ol id="ol_bj5_cpb_htb">
+      <li>
+        <p>li li li </p>
+      </li>
+      <li>
+        <p>li li li </p>
+      </li>
+      <li>
+        <p>li li li </p>
+      </li>
+    </ol>
+    <ul id="ul_cj5_cpb_htb">
+      <li>
+        <p>li li li </p>
+      </li>
+      <li>
+        <p>li li li </p>
+      </li>
+      <li>
+        <p>li li li </p>
+      </li>
+    </ul>
+    
+    <simpletable id="simpletable_p1r_2pb_htb">
+      <sthead>
+        <stentry>
+          <p>paragraph</p>
+        </stentry>
+      </sthead>
+      <strow>
+        <stentry>
+          <p>paragraph</p>
+        </stentry>
+      </strow>
+    </simpletable>
+    
+    <note>
+      <p>paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph </p>
+    </note>
+    
+    <fn id="fn">
+      <p>paragraph</p>
+    </fn>
+        
+          
+  </body>
+</topic>
