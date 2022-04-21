@@ -29,5 +29,9 @@
     <topicref href="mdita/test-topic-conditions.md" format="mdita"/>
     <topicref href="xdita/test-topic_condfitions.dita" format="dita"/>
   </topicref>
+  <topicref href="xdita/glue_element-tests.dita">
+    <topicref href="xdita/element-gallery1.dita"/>
+    <topicref href="mdita/element-gallery1.md" format="markdown"/>
+  </topicref>
 
 </map>

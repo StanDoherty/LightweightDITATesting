@@ -1,75 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD LIGHTWEIGHT DITA Topic//EN" "topic.dtd">
 <topic id="topic_tpb_m2r_gtb">
-  <title></title>
+<title>XDITA elements</title>
+  
 <shortdesc>shortdesc shortdesc shordesc shortdesc</shortdesc>
-  <body>
 
-<p>Text <i>italics text</i> text text <b>bold text bold text</b> <ph>ph ph ph </ph></p>
-    
-    <pre>pre formatting pre</pre>
-    
-    <p>paragraph paragraph paragraph</p>
+<prolog>
+  <data name="id" value="element-gallery1.dita"/>
+  <data name="author" value="Stan Doherty"/>
+</prolog>
+  
+<body>
+<!--   
+  <section>
+    <p>paragraph inside a section</p>
+  </section>
+-->
 
-    <p>paragraph paragraph paragraph</p>
-    <!-- Inline image -->
-    <p>Running text <image href="../../ootb-dita/images/whos-your-daddy.jpg">
-      <alt>xx</alt>
-    </image> running text</p>
-    <!-- Simulated block image -->
-    <p><image href="../../ootb-dita/images/whos-your-daddy.jpg"/></p>
+<p>Second paragraph with inline formatting for <b>bold</b>, <i>italics text</i>, 
+  <sub>subscript</sub>, and <sup>superscript</sup>.</p>
+      
+  <!-- Inline image -->
+  <p>Running text with inline image <image href="../images/gibson_logo.png">
+    <alt>Gibson logo</alt>
+  </image> and more running text</p>
+
+  <!-- Simulated block image -->
+  <p><image href="../images/gibson-lp-recording-natural-1972-cons-full-front.jpg"><alt>Les Paul Recording</alt></image></p>
+  
+  
+<note>
+  <p>Note content in a paragraph</p>
+</note>
+
+<!--
+  <fn id="first">And here's the footnote text</fn>  
+-->
+
+
     <dl>
       <dlentry>
-        <dt>dt dt dt dt dt</dt>
+        <dt>Apple</dt>
         <dd>
-          <p>dd dd dd dd</p>
+          <p>Pomaceous fruit of plants of the genus Malus in 
+            the family Rosaceae.</p>
+        </dd>
+      </dlentry>
+      <dlentry>
+        <dt>Orange</dt>
+        <dd>
+          <p>The fruit of an evergreen tree of the genus Citrus.</p>
         </dd>
       </dlentry>
     </dl>
+
     <ol id="ol_bj5_cpb_htb">
       <li>
-        <p>li li li </p>
+        <p>Ordered list item</p>
       </li>
       <li>
-        <p>li li li </p>
+        <p>Ordered list item</p>
       </li>
       <li>
-        <p>li li li </p>
+        <p>Ordered list item</p>
       </li>
     </ol>
+  
     <ul id="ul_cj5_cpb_htb">
       <li>
-        <p>li li li </p>
+        <p>Unordered list item</p>
       </li>
       <li>
-        <p>li li li </p>
-      </li>
-      <li>
-        <p>li li li </p>
+        <p>Unordered list item</p>
       </li>
     </ul>
-    
+
+  <video>
+    <video-poster value="../media/preview.png" />
+    <media-controls />
+    <media-source value="../media/sample.mp4" />
+  </video>
+
+<audio>
+  <media-source value="../media/sample.mp3"></media-source>
+</audio>
+
     <simpletable id="simpletable_p1r_2pb_htb">
       <sthead>
         <stentry>
-          <p>paragraph</p>
+          <p>head-col1</p>
+        </stentry>
+        <stentry>
+          <p>head-col2</p>
         </stentry>
       </sthead>
       <strow>
         <stentry>
-          <p>paragraph</p>
+          <p>row-1-col1</p>
+        </stentry>
+        <stentry>
+          <p>row1-col2</p>
+        </stentry>
+      </strow>
+      <strow>
+        <stentry>
+          <p>row2-col1</p>
+        </stentry>
+        <stentry>
+          <p>row2-col2</p>
         </stentry>
       </strow>
     </simpletable>
     
-    <note>
-      <p>paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph </p>
-    </note>
-    
-    <fn id="fn">
-      <p>paragraph</p>
-    </fn>
-        
-          
+<pre>
+Line break
+ Line break
+   Line break
+</pre>      
+
+         
   </body>
 </topic>
