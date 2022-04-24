@@ -17,8 +17,10 @@
   </section>
 -->
 
+<data name="random-name" value="random-value"/>
+
 <p>Second paragraph with inline formatting for <b>bold</b>, <i>italics text</i>, 
-  <sub>subscript</sub>, and <sup>superscript</sup>.</p>
+  <ph>phrase</ph>, <sub>subscript</sub>, and <sup>superscript</sup>.</p>
       
   <!-- Inline image -->
   <p>Running text with inline image <image href="../images/gibson_logo.png">
@@ -28,7 +30,13 @@
   <!-- Simulated block image -->
   <p><image href="../images/gibson-lp-recording-natural-1972-cons-full-front.jpg"><alt>Les Paul Recording</alt></image></p>
   
-  
+
+  <fig>
+    <desc>This is a description for the figure. </desc>
+    <image href="../images/gibson-lp-recording-natural-1972-cons-full-front.jpg"><alt>Les Paul Recording</alt></image>
+  </fig>
+
+
 <note>
   <p>Note content in a paragraph</p>
 </note>
@@ -84,6 +92,11 @@
 <audio>
   <media-source value="../media/sample.mp3"></media-source>
 </audio>
+
+<video>
+  <desc>This is a description for the video.</desc>
+  <media-source value="../media/sample.mp4"></media-source>
+</video>
 
     <simpletable id="simpletable_p1r_2pb_htb">
       <sthead>

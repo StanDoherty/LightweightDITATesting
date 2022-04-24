@@ -1,10 +1,56 @@
 # Lightweight DITA Testing
 
-This repo provides source files for ongoing LwDITA pilot testing. If you have an interest in LwDITA -- and I hope that you do -- see [Lightweight DITA: An Introduction Version 1.0](http://docs.oasis-open.org/dita/LwDITA/v1.0/cn02/LwDITA-v1.0-cn02.pdf) produced by the [OASIS DITA Lightweight Subcommittee](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=dita-lightweight-dita). It provides an overview of the evolving specification and many wonderful examples. 
+This repo provides source files for ongoing LwDITA pilot testing. If you have an interest in LwDITA -- and I hope that you do -- see [Lightweight DITA: An Introduction Version 1.0](http://docs.oasis-open.org/dita/LwDITA/v1.0/cn02/LwDITA-v1.0-cn02.pdf) produced by the [OASIS DITA Lightweight Subcommittee](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=dita-lightweight-dita). It provides an overview of the evolving specification and many wonderful examples.
+
+There are two major sections in this page:
+
+1. April 2022 test results
+2. February 2021 test results
+
+# April 2022 test results
+
+## 2022 Test files
+
+I updated the February 2021 test files when necessary. Otherwise I added two test files full of block and inline elements:
+
+* ```xdita/element-gallery1.dita```
+* ```mdita/element-gallery1.md```
+
+## 2022 Test environment 
+
+I updated the test environment.
+
+* Oxygen Editor 24.1  
+* DITA-OT 3.7.1 HTML5 transform
+* Windows 11 and MacOS 12 (Monterey)
+
+## 2022 Test notes
+
+I documented the input and the results of 24 tests in the file [LwDITA_test-notes_April-2022.txt](LwDITA_test-notes_April-2022.txt). Each test gets a PASS or FAIL relative to its successful resolution in Oxygen (for validation) and DITA-OT  HTML5 output.   
+
+## Test results
+
+Here's the legend for the following tables. 
+
+![FAIL icon](./images/icon_fail.png): The test encountered validation and/or processing error(s) 
+
+![PASS icon](./images/icon_pass1.png): The test "validated" and produced expected output on the first try.   
+ 
+### April 2022 referencing elements
+
+![April test results](./images/results-april-2022_referencing.png)
+
+### April 2022 block and inline topic elements
+
+![April test results](./images/results-april-2022_elements1.png)
+
+![April test results](./images/results-april-2022_elements2.png)
+
+# February 2021 test results 
 
 ## Test files
 
-The majority of test files here are derived directly from the Lightweight DITA sample files currently shipping with Version 3.6 of the DITA-OT. 
+The majority of test files here are derived directly from the Lightweight DITA sample files currently shipping with the DITA-OT. 
 
 ![dita-ot-3.6 sample files](images/samples1.png)
 
