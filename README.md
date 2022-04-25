@@ -99,6 +99,6 @@ Stanley Doherty, Ph.D.
 
 stan@modularwriting.com
 
-Stan.Doherty@oracle.com
+StanDoherty@google.com
 
    
